@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title> PRODUTOS E-COMMERCE</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Roboto', sans-serif;">
+
+<main th:if="${#lists.size(dados) == 0}">
+  <p>Este relatório não gerou dados.</p>
+</main>
+  
+<main th:if="${#lists.size(dados) > 0}">
+<div class="vTopo">
+    <div style="height: 70px; float: right;">
+      </div>
+    <h1> PRODUTOS E-COMMERCE</h1>
+</div>
+  
+  <article style="padding: 30px; color: #333;">
+  
+  
+ <table width="100%"  cellpadding="0" cellspacing="0" class="vTabelaDados"  border="1">
+        <thead>		
+                    <tr height=100%>
+                        <th>IDITEM</th>
+                        <th>DESCRICAO</th>
+                        <th>SALDO</th>
+                        <th>SALDO_ECOMMERCE</th>
+                        <th>COD.BARRAS</th>
+                        <th>REPOSIÇÃO</th>
+						<th>IDDEPTO</th>
+						<th>DEPARTAMENTO</th>
+						<th>UNIDADE</th>
+						<th>IDMARCA</th>
+						<th>MARCA</th>
+						<th>PRECO</th>
+						<th>PRECO_ECOMMERCE</th>
+						<th>OFERTA_ECOMMERCE</th>
+						<th>OFERTADATAINI</th>
+						<th>OFERTADATAFIN</th>
+						<th>USA_ECOMMERCE</th>
+						<th>PESOBRUTO</th>
+						<th>PESOLIQUIDO</th>
+						<th>ALTURA</th>
+						<th>LARGURA</th>
+						<th>COMPRIMENTO</th>
+						<th>ULTALT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                       <tr th:each="d : ${dados}">
+                          <td th:text="${d.IDITEM}"></td>
+                          <td th:text="${d.DESCRICAO}"></td>
+                         <td th:text="${d.SALDO}"></td>
+                          <td th:text="${d.SALDOECOMMERCE}"></td>
+                          <td th:text="${d.NROCODBARR}"></td>
+                          <td th:text="${d.IDDEPTO}"></td>
+						  <td th:text="${d.DEPARTAMENTO}"></td>
+						  <td th:text="${d.UN}"></td>
+						  <td th:text="${d.IDMARCA}"></td>
+						  <td th:text="${d.MARCA}"></td>
+						  <td th:text="${d.PRECO}"></td>
+						  <td th:text="${d.PRECOECOMMERCE}"></td>
+						  <td th:text="${d.OFERTAECOMMERCE}"></td>
+						  <td th:text="${d.PFERTADATAINI}"></td>
+						  <td th:text="${d.OFERTADATAFIN}"></td>
+						  <td th:text="${d.USAECOMMERCE}"></td>
+						  <td th:text="${d.PESOBRUTO}"></td>
+						  <td th:text="${d.PESOLIQUIDO}"></td>
+						  <td th:text="${d.ALTURA}"></td>
+						  <td th:text="${d.LARGURA}"></td>
+						  <td th:text="${d.COMPRIMENTO}"></td>
+						  <td th:text="${d.ULTALT}"></td>
+                      </tr>
+                    </tbody>
+    </table>
+
+    
+  </article>
+</main>
+</body>
+</html>
